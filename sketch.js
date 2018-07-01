@@ -308,7 +308,7 @@ function draw (){
   }
 }
 
-function javi{
+function javi(){
   
   
   this.how = function() {
