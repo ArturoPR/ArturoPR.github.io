@@ -1,5 +1,7 @@
 var javi;
 
+var rot,rot2;
+
 var muerto;
 
 var lol;
@@ -65,6 +67,7 @@ function preload(){
 }
 
 function setup(){
+  rot=0;
   muerto=false;
   sound=2;
   song.setVolume(1);
@@ -393,7 +396,7 @@ function draw (){
 
     text("Ain't got nothing better to do than playing this crappy game late at night?",width/2,200);
 
-    text("Get a life",width/2,300);
+    text("Get outta here",width/2,300);
   }
 
   if(hour()<=8 && hour()>=5){
@@ -408,9 +411,26 @@ function draw (){
 
     text("Preciate it, bro",width/2,200);
   }
-  if(deviceOrientation==LANDSCAPE){
+  if(deviceOrientation==PORTRAIT){
     fill(0);
-    rect(-50,-50,2000,2000)
+    rect(-(width/2),-(height/2),2000,2000);
+
+    translate(width/2,height/2);
+    strokeWeight(5);
+    stroke(255);
+    noFill();
+    rectMode(CENTER);
+    if(rot<=90 && rot>=0){
+      rotate(radians(rot));
+    }else{
+      rotate(radians(90));
+    }
+    rect(0,0,50,100);
+    rot+=2;
+    if(rot>=180){
+      rot=0;
+    }
+    translate(-(width/2),-(height/2));
   }
 }
 
