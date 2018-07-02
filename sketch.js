@@ -79,7 +79,7 @@ function setup(){
   vely=random(-20,20);
   
   song.loop();
-  createCanvas(displayWidth-20,displayHeight-20);
+  createCanvas(displayWidth,displayHeight);
 show=0;
   show2=255;
   dific1=5+punt/5;
@@ -380,6 +380,38 @@ function draw (){
     bvel=0;
   }
   image(full,10,10);
+
+  if((hour()>=23 && hour()<=24) || hour()<=4 && hour()>=0){
+    song.stop();
+    lol.stop();
+    fill(0);
+    rect(-50,-50,2000,2000)
+    cursor(HAND);
+
+    fill(255);
+    text("What in the actual ass are you doing, you nerd.",width/2,100);
+
+    text("Ain't got nothing better to do than playing this crappy game late at night?",width/2,200);
+
+    text("Get a life",width/2,300);
+  }
+
+  if(hour()<=8 && hour()>=5){
+    song.stop();
+    lol.stop();
+    fill(0);
+    rect(-50,-50,2000,2000)
+    cursor(HAND);
+
+    fill(255);
+    text("You actually got up early just to play this game",width/2,100);
+
+    text("Preciate it, bro",width/2,200);
+  }
+  if(deviceOrientation==LANDSCAPE){
+    fill(0);
+    rect(-50,-50,2000,2000)
+  }
 }
 
 function javi(){
