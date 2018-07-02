@@ -103,6 +103,7 @@ show=0;
   }
 
 function draw (){ 
+if(displayWidth)
   if(sioq>0){
     col1=random(0,255);
     col2=random(0,255);
@@ -384,20 +385,7 @@ function draw (){
   }
   image(full,10,10);
 
-  if((hour()>=23 && hour()<=24) || hour()<=4 && hour()>=0){
-    song.stop();
-    lol.stop();
-    fill(0);
-    rect(-50,-50,2000,2000)
-    cursor(HAND);
-
-    fill(255);
-    text("What in the actual ass are you doing, you nerd.",width/2,100);
-
-    text("Ain't got nothing better to do than playing this crappy game late at night?",width/2,200);
-
-    text("Get outta here",width/2,300);
-  }
+  
 
   if(hour()<=8 && hour()>=5){
     song.stop();
@@ -407,6 +395,7 @@ function draw (){
     cursor(HAND);
 
     fill(255);
+    textSize(20);
     text("You actually got up early just to play this game",width/2,100);
 
     text("Preciate it, bro",width/2,200);
